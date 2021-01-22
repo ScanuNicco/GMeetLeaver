@@ -31,11 +31,15 @@ function getMeetings(times) {
 						time = times[j].expires;
 					}
 				}
+				var tab = document.createElement("div");
+				tab.classList.add('tab');
 				if (time == -1) { //No time has previously been set
-					document.getElementById("meetingsCont").innerHTML += "<div class='tab'><img src='" + tabs[i].favIconUrl + "' class='meeticon'><h2>" + tabs[i].title + "</h2><div class='actionsContainer'><input type='time' id='time" + i + "'><button class='actionButton' tabId='" + tabs[i].id + "' id='action" + i + "'>Set End Time</button></div></div>";
+					tab.innerHTML += "<img src='" + tabs[i].favIconUrl + "' class='meeticon'><h2>" + tabs[i].title + "</h2><div class='actionsContainer'><input type='time' id='time" + i + "'><button class='actionButton' tabId='" + tabs[i].id + "' id='action" + i + "'>Set End Time</button></div>";
+					document.getElementById("meetingsCont").appendChild(tab);
 					document.getElementById("action" + i).addEventListener('click', setTimer);
 				} else { //A time has beeen set for this tab, display it.
-					document.getElementById("meetingsCont").innerHTML += "<div class='tab'><img src='" + tabs[i].favIconUrl + "' class='meeticon'><h2>" + tabs[i].title + "</h2><div class='actionsContainer'><h3>Scheduled To Close At " + time + "</h3><button class='actionButton' tabId='" + tabs[i].id + "' id='close" + i + "'>Cancel</button></div></div>";
+					tab.innerHTML += "<img src='" + tabs[i].favIconUrl + "' class='meeticon'><h2>" + tabs[i].title + "</h2><div class='actionsContainer'><h3>Scheduled To Close At " + time + "</h3><button class='actionButton' tabId='" + tabs[i].id + "' id='close" + i + "'>Cancel</button></div>";
+					document.getElementById("meetingsCont").appendChild(tab);
 					document.getElementById("close" + i).addEventListener('click', clearTimer);
 				}
 			}
