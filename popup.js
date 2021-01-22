@@ -45,7 +45,7 @@ function getMeetings(times) {
 			}
 		}
 		if(numentries == 0){
-			document.getElementById("meetingsCont").innerHTML += "<h2 style='color: grey; margin: 15px;'>No Meetings Open</h2>";
+			document.getElementById("meetingsCont").innerHTML += "<h2 style='color: grey; margin: 30px;'>No Meetings Open</h2>";
 		}
 	});
 }

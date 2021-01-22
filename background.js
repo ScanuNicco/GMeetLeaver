@@ -14,13 +14,14 @@ function checkTabs() {
 		for (var i = 0; i < tabtimes.length; i++) {
 			if (tabtimes[i].expires == time) {
 				//This tab's time is up!
-				chrome.tabs.remove(Number(tabtimes[i].id), function () {
-					//RIP tab, remove it from the array to prevent errors
-					tabtimes.splice(i, 1);
-					chrome.storage.local.set({
-						'tabtimes': tabtimes
-					}, function () {});
-				});
+				chrome.tabs.remove(Number(tabtimes[i].id), function () {});
+				//RIP tab, remove it from the array to prevent errors
+				tabtimes.splice(i, 1);
+				console.log(tabtimes);
+				console.log(i);
+				chrome.storage.local.set({
+					'tabtimes': tabtimes
+				}, function () {});
 			}
 		}
 	});
