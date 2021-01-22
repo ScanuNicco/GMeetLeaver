@@ -1,0 +1,52 @@
+body {
+	min-width: 300px;
+	text-align: center;
+}
+
+.tab {
+	background: #ccc;
+	border-radius: 5px;
+	margin: 5px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+}
+
+.meeticon {
+	width: 20px;
+	display: inline-block;
+	margin: 5px;
+	position: relative;
+	top: 7.5px;
+}
+
+.tab h2 {
+	display: inline-block;
+	margin: 5px;
+}
+
+.actionsContainer {
+	text-align: center;
+}
+
+.actionButton {
+	background: #ff2222;
+	color: white;
+	font-size: 16pt;
+	padding: 5px;
+	margin: 5px;
+	font-family: sans-serif;
+	border: none;
+	border-radius: 3px;
+	display: inline-block;
+}
+
+input[type="time"] {
+	background: white;
+	color: black;
+	font-size: 16pt;
+	padding: 5px;
+	margin: 5px;
+	font-family: sans-serif;
+	border: none;
+	border-radius: 3px;
+	display: inline-block;
+}
